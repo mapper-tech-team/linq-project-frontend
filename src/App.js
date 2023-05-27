@@ -1,9 +1,14 @@
 import React from 'react';
-import Home from './components/Home/Home';
+import GlobalStyle from './styles/global';
+import RoutesApp from './routes';
+import { AuthProvider } from './contexts/auth';
 
 function App() {
   return (
-    <Home />
+    <AuthProvider>
+      <RoutesApp />
+      <GlobalStyle />
+    </AuthProvider>
   );
 }
 
