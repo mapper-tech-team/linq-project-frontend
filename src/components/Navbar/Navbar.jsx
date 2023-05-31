@@ -10,9 +10,9 @@ function Navbar() {
 
             <ul className='navbar'>
                 <li><Link to="/" className='active'>Projetos</Link></li>
-                <li><Link to="/">Cadastrar Projeto</Link></li>
-                <li><Link to="/">Sobre o LinQProject</Link></li>
-                <li><Link to="/">Meus Projetos</Link></li>
+                <li><Link to="/createProject">Cadastrar Projeto</Link></li>
+                <li><Link to="/about">Sobre o LinQProject</Link></li>
+                <li><Link to="/myProjects">Meus Projetos</Link></li>
             </ul>
 
             <ul className='main'>
