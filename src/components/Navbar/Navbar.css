@@ -100,3 +100,7 @@ header {
     z-index: 10001;
     display: none;
 }
+
+.hideOption { 
+    display: none;
+}

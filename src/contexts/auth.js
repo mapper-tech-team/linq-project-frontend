@@ -1,40 +1,37 @@
 import { createContext, useEffect, useState } from "react";
+import UserService from "../services/UserService";
 
 export const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState();
+    const [user, setUser] = useState({});
+    const [token, setToken] = useState({});
+
+    const getUserToken = (email, senha) => {
+        return  UserService.login(email, senha).then((res) => {
+           setToken(res.data);
+        })
+    }    
+
+    const getUser = (email, senha) => {
+        return UserService.obterUsuario(email, senha).then((res) => {
+           setUser(res.data);
+        })
+    }
 
     useEffect(() => {
         const userToken = localStorage.getItem("user_token");
-        const usersStorage = localStorage.getItem("users_db");
-
-        if (userToken && usersStorage) {
-            const hasUser = JSON.parse(usersStorage)?.filter(
-                (user) => user.email === JSON.parse(userToken).email
-            );
-
-            if (hasUser) setUser(hasUser[0]);
-        }
     }, []);
 
     const signin = (email, password) => {
-        const usersStorage = JSON.parse(localStorage.getItem("users_db"));
-
-        const hasUser = usersStorage?.filter((user) => user.email === email);
-
-        if (hasUser?.length) {
-            if (hasUser[0].email === email && hasUser[0].password === password) {
-                const token = Math.random().toString(36).substring(2);
-                localStorage.setItem("user_token", JSON.stringify({ email, token }));
-                setUser({ email, password });
-                return;
-            } else {
-                return "E-mail ou senha incorretos";
-            }
-        } else {
-            return "Usuário não encontrado";
-        }
+        UserService.obterUsuario(email, password).then((res) => {
+            setUser(res.data);
+            localStorage.setItem("user_email", res.data.email);
+        });
+        UserService.login(email, password).then((response) => {
+            setToken(response.data);
+            localStorage.setItem("user_token", response.data.token);
+        });
     }
 
     const signup = (email, password) => {
@@ -62,6 +59,9 @@ export const AuthProvider = ({ children }) => {
     const signout = () => {
         setUser(null);
         localStorage.removeItem("user_token");
+        localStorage.removeItem("user_email");
+        localStorage.removeItem("user_perfil");
+        localStorage.removeItem("user_id");
     };
 
     return (

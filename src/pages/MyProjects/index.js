@@ -1,10 +1,39 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
+import Card  from '../../components/Card/Card';
+import api from '../../Api/api';
 
-function MyProjects() {
+const MyProjects = () => {
+
+  const [projetos, setProjetos] = useState([]);
+
+  useEffect(() => {
+
+    const userId = localStorage.getItem("user_id");
+    const userToken = localStorage.getItem("user_token");
+
+    (async () => {
+      const config = {
+        headers: {
+          'Authorization': 'Bearer ' + userToken
+        }
+      }
+      const { data } = await api.get('/projeto/obter/aluno/' + userId, config);
+      setProjetos(data);
+    })();
+
+  }, []);
+
   return (
-    <div>
-        <h1>Meus Projetos</h1>
-    </div>
+    <>
+      <Navbar />
+        <div className='container'>
+            <h1>Meus Projetos</h1>
+            <Card projetos={projetos} />
+        </div>
+      <Footer />
+    </>
   )
 }
 

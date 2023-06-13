@@ -5,6 +5,7 @@ import * as C from "./style";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import { useState } from 'react';
+import api from '../../Api/api';
 
 const Signin = () => {
   const { signin } = useAuth();
@@ -14,20 +15,27 @@ const Signin = () => {
   const [senha, setSenha] = useState("");
   const [error, setError] = useState("");
 
+
   const handleLogin = () => {
     if (!email | !senha) {
       setError("Preencha todos os campos");
       return;
     }
 
-    const res = signin(email, senha);
+    (async () => {
+      const response = await api.post('/auth', { email: email, senha: senha });
+      if (response.status === 200) {
+        localStorage.setItem("user_email", response.data.email);
+        localStorage.setItem("user_token", response.data.token);
+        localStorage.setItem("user_perfil", response.data.perfil);
+        localStorage.setItem("user_id", response.data.id);
+        navigate("/home");
+      }
 
-    if (res) {
-      setError(res);
-      return;
-    }
-
-    navigate("/home"); // lembrar de trocar
+    })().catch((err) => { 
+      setError("Usuário ou senha incorretos");
+      console.log(err);
+    });
   };
 
   return (

@@ -8,6 +8,13 @@ class ProjetoService {
         return axios.get(PROJETOS_REST_API_URL + "/obter");
     }
 
+    async getProjetoPorAlunoId(alunoId, token) {
+        const config = {
+            headers: { Authorization: `Bearer ${token}`}
+        }
+        return axios.get(`${PROJETOS_REST_API_URL}/obter/aluno/${alunoId}`, config);
+    }
+
 }
 
 export default new ProjetoService();

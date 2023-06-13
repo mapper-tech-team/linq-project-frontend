@@ -7,6 +7,7 @@ import ProjectForm from "../pages/ProjectForm";
 import useAuth from "../hooks/useAuth";
 import MyProjects from "../pages/MyProjects";
 import About from "../pages/About";
+import ProjectDetails from "../pages/ProjectDetails";
 
 
 const Private = ({ Item }) => {
@@ -20,12 +21,13 @@ const RoutesApp = () => {
         <BrowserRouter>
             <Fragment>
                 <Routes>
-                    <Route exact path="/" element={<Home />}/> {/*lembrar disso*/}
+                    <Route exact path="/home" element={<Home />}/> {/*lembrar disso*/}
                     <Route path="/signin" element={<Signin />} />
                     <Route exact path="/signup" element={<Signup />}/>
                     <Route path="/createProject" element={<ProjectForm />}/>
                     <Route path="/myProjects" element={<MyProjects />}/>
                     <Route path="/about" element={<About />}/>
+                    <Route path="projectDetails/:id" element={<ProjectDetails />} />
                     <Route path="*" element={<Signin />} />
                 </Routes>
             </Fragment>
