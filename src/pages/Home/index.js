@@ -11,8 +11,16 @@ const Home = () => {
   const [projetos, setProjetos] = useState([]);
 
   useEffect(() => {
+
+    const userToken = localStorage.getItem("user_token");
+
     (async () => {
-      const { data } = await api.get('/projeto/obter');
+      const config = {
+        headers: {
+          'Authorization': 'Bearer ' + userToken
+        }
+      }
+      const { data } = await api.get('/projeto/obter', config);
 
       setProjetos(data);
     })();

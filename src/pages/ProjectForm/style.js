@@ -6,7 +6,6 @@ export const Container = styled.div`
     justify-content: center;
     flex-direction: column;
     gap: 10px;
-    height: 100vh;
 `;
 
 export const Content = styled.div`
@@ -28,7 +27,7 @@ export const Label = styled.label`
     font-weight: 600;
     color: #1A74AE;
     padding-bottom: 10px;
-    padding-top: 250px;
+    padding-top: 5%;
 `;
 
 export const LabelSignup = styled.label`

@@ -42,3 +42,82 @@
     margin: 15px 0;
     font-size: 10px;
 }
+
+button {
+    padding: 10px;
+}
+
+.btnLinkedin {
+    border: none;
+    background: #075e8d;
+    color: white;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.btnExcluir {
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background: #e83d3d;
+} 
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap%27);
+
+*{
+    box-sizing:border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+    --nav-color:#23232e;
+}
+.container1{
+    padding: 0% 5%;
+
+}
+
+body{
+   margin: 0;
+   padding: 0; 
+}
+
+.images{
+    padding-left: 15%;
+    padding-right: 15%;
+
+}
+
+.carousel-inner {
+    height: 400px;
+    margin-bottom: 20px;
+}
+img{
+    padding: 10px;
+
+    border-radius: 40px; 
+    object-fit: cover;
+}
+#main-text{
+    font-size: 20px;
+    padding-top: 3%;
+    height:25vh;
+}
+.Title{
+    font-weight: 700;
+}
+
+.NameProject{
+    font-weight: 700;
+    margin-top: 2%;
+    font-size: 50px;
+}
+.infos{
+    align-items: center;
+    justify-content: center;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact{
+    margin: 30px;
+} */

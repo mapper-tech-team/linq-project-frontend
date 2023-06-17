@@ -30,7 +30,11 @@ const MyProjects = () => {
       <Navbar />
         <div className='container'>
             <h1>Meus Projetos</h1>
-            <Card projetos={projetos} />
+            {
+             projetos.length <= 0 ? <h1>Você não possui projetos cadastrados</h1> :    
+             <Card projetos={projetos} />    
+            }
+            
         </div>
       <Footer />
     </>

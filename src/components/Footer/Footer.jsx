@@ -4,6 +4,7 @@ import fb from "../../assets/fb.png";
 import twitter from "../../assets/twitter.png";
 import linkedin from "../../assets/linkedin.png";
 import instagram from "../../assets/instagram.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -38,12 +39,12 @@ const Footer = () => {
                     </a>
                 </div>
                 <div className='sb__footer-links_div'>
-                    <h4>Em breve...</h4>
+                    <h4>Redes Sociais da Mapper Tech</h4>
                     <div className='socialmedia'>
                         <p><img src={fb} alt="" /></p>
-                        <p><img src={twitter} alt="" /></p>
-                        <p><img src={linkedin} alt="" /></p>
-                        <p><img src={instagram} alt="" /></p>
+                        <Link to="https://twitter.com/mapper_tech" target='_blank'><p><img src={twitter} alt="" /></p></Link>
+                        <Link to="https://www.linkedin.com/in/mapper-tech-47757b27b/" target='_blank'><p><img src={linkedin} alt="" /></p></Link>
+                        <Link to="https://www.instagram.com/mapper.tech/" target='_blank'><p><img src={instagram} alt="" /></p></Link>
                     </div>
                 </div>
             </div>

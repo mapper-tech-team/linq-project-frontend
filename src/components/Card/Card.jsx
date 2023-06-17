@@ -23,7 +23,7 @@ const Card = ({ projetos }) => {
                     </div>
                     <div className='btn'>
                         <button>
-                            <Link to={`/projectDetails/${projeto.id}`}>
+                            <Link className='btnVerMais' to={`/projectDetails/${projeto.id}`}>
                                 Ver mais
                             </Link>
                         </button>
