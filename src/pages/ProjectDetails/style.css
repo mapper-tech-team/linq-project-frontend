@@ -1,3 +1,5 @@
+
+
 .details {
     display: flex;
     justify-items: space-around;
@@ -62,10 +64,10 @@ button {
     background: #e83d3d;
 } 
 
+ 
 
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap%27);
 
-*{
+/* *{
     box-sizing:border-box;
     font-family: 'Roboto Condensed', sans-serif;
     --nav-color:#23232e;
@@ -92,7 +94,7 @@ body{
 }
 img{
     padding: 10px;
-
+    
     border-radius: 40px; 
     object-fit: cover;
 }
@@ -113,7 +115,7 @@ img{
 .infos{
     align-items: center;
     justify-content: center;
-
+    
     display: flex;
     flex-wrap: wrap;
 }
@@ -121,3 +123,6 @@ img{
 .contact{
     margin: 30px;
 } */
+
+
+

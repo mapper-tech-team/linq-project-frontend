@@ -19,11 +19,8 @@ header {
     top: 0;
     right: 0;
     z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     background: transparent;
-    padding: 28px 12%;
+    padding: 22px 1%;
     transition: all .50s ease;
     background-color: #222327;
 }
@@ -77,12 +74,11 @@ header {
 .main {
     display: flex;
     align-items: center;
-    margin-right: -30px;
+    
 }
 
 .main a {
-    margin-right: 25px;
-    margin-left: 10px;
+   
     color: #fff;
     font-size: 0.9rem;
     text-decoration: none;
@@ -103,4 +99,20 @@ header {
 
 .hideOption { 
     display: none;
+}
+.menu{
+    size: 100px;
+    color: #ffffff;
+}
+.login{
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+border: 2px solid white;
+border-radius: 20px;
+}
+.login a{
+    padding: 10px;
+    margin: 0px;
 }

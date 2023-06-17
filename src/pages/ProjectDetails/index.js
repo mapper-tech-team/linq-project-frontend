@@ -5,6 +5,13 @@ import api from '../../Api/api';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import './style.css';
+import Whatsapp from '../../assets/whatsapp.png'
+import Email from '../../assets/o-email (1).png'
+import Projeto from '../../assets/projeto.jpeg'
+import Projeto2 from '../../assets/projeto2.jpeg'
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.bundle';
+import 'bootstrap/dist/js/bootstrap';
 
 const ProjectDetails = () => {
 
@@ -34,6 +41,54 @@ const ProjectDetails = () => {
   return (
     <>
         <Navbar />
+        {/* <div class="container1">
+        <div class="NameProject">Nome do projeto - Categoria</div>
+        <section id="main-text">
+            <div class="Title">Descrição do projeto</div>
+            <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In ipsam adipisci accusamus nesciunt ipsum quam,
+                quas aspernatur quisquam possimus eligendi, veniam dolorem ea labore ad quos doloribus unde quibusdam.
+                Eligendi.</div>
+        </section>
+    </div>
+  
+
+    <div class="infos">
+        <div class="docs">
+            <p>docs</p>
+            <img class="imgContacts" src="./assets/formato-de-arquivo-doc.pn" alt=""/>
+            <img  class="imgContacts"src="./assets/csv.png" alt=""/>
+        </div>
+        <div class="contact">
+<p>Contatos</p>
+<img class="imgContacts" src={Whatsapp} alt=""/>
+<img  class="imgContacts"src={Email} alt=""/>
+        </div>
+
+    </div>
+
+    <div class="images">
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item" >
+                    <img src={Projeto} class="d-block w-100" alt="..."/>
+                </div>
+                <div class="carousel-item" >
+                    <img src={Projeto2} class="w-100" alt="..."/>
+                </div>
+                <div class="carousel-item">
+                    <img src={Projeto2} class="w-100" alt="..."/>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div> */}
         <div className='details'>
             <div className='big-img'>
               <img src={projeto.foto ? projeto.foto : "https://s3-ap-south-1.amazonaws.com/static.awfis.com/wp-content/uploads/2017/07/07184649/ProjectManagement.jpg"} />

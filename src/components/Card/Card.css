@@ -1,7 +1,9 @@
 .cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content:flex-start;
+    flex-direction: row;
+    gap: 2%;
 }
 
 .card-container {
@@ -62,9 +64,10 @@ a {
     text-decoration: none;
     font-weight: bold;
     font-style: none;
+
 }
 
 .btnVerMais {
-    
+    border-radius: 10px;
     text-decoration: none;
 }
