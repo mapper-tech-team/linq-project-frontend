@@ -31,18 +31,9 @@ export const Label = styled.label`
 `;
 
 export const LabelSignup = styled.label`
-    font-size: 16px;
+    font-size: 25px;
     color: #676767;
-`;
-
-export const LabelForgotPass = styled.label`
-    font-size: 16px;
-    color: #676767;
-    cursor: pointer;
-
-    &:hover {
-        color: blue;
-    }
+    margin-bottom: 20px;
 `;
 
 export const LabelError = styled.label`
@@ -56,9 +47,5 @@ export const Strong = styled.strong`
     a {
         text-decoration: none;
         color: #676767;
-    }
-
-    a:hover {
-       color: blue;
     }
 `;

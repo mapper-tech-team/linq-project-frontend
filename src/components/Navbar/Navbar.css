@@ -116,3 +116,19 @@ border-radius: 20px;
     padding: 10px;
     margin: 0px;
 }
+
+.logoutIcon {
+    display: flex;
+    margin-left: 300%;
+    margin-right: 20%;
+}
+
+.iconContainer {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    width: 50%;
+}
+
+.sair {
+    color: white;
+}

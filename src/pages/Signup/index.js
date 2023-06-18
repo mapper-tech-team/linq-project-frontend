@@ -1,5 +1,5 @@
 import React from 'react'
-import Input from "../../components/Input";
+import RequiredInput from "../../components/RequiredInput";
 import Button from "../../components/Button";
 import RadioButton from '../../components/RadioButton';
 import * as C from './style';
@@ -152,35 +152,39 @@ const Signup = () => {
                checked={perfil.colaborador}
              />
            </div>
-           <Input 
+           <RequiredInput 
              type="text"
              placeholder="Digite seu Nome"
              value={nome}
              onChange={(e) => [setNome(e.target.value), setError("")]}
            />
-           <Input 
+           <RequiredInput 
              type="email"
              placeholder="Digite seu e-mail"
              value={email}
              onChange={(e) => [setEmail(e.target.value), setError("")]}
+             
            />
-           <Input 
+           <RequiredInput 
              type="email"
              placeholder="Confirme seu e-mail"
              value={emailConf}
              onChange={(e) => [setEmailConf(e.target.value), setError("")]}
+             
            />
-           <Input 
+           <RequiredInput 
              type="password"
              placeholder="Digite a senha"
              value={senha}
              onChange={(e) => [setSenha(e.target.value), setError("")]}
+             
            />
-           <Input 
+           <RequiredInput 
              type="number"
              placeholder="Digite o RA"
              value={ra}
              onChange={(e) => [setRa(e.target.value), setError("")]}
+             
            />
            <div>
             <p style={{ textAlign: "center" }}>É Alumni?</p>
@@ -239,35 +243,40 @@ const Signup = () => {
                checked={perfil.colaborador}
              />
            </div>
-           <Input 
+           <RequiredInput 
              type="text"
              placeholder="Digite seu Nome"
              value={nome}
              onChange={(e) => [setNome(e.target.value), setError("")]}
+             
            />
-           <Input 
+           <RequiredInput 
              type="email"
              placeholder="Digite seu e-mail"
              value={email}
              onChange={(e) => [setEmail(e.target.value), setError("")]}
+             
            />
-           <Input 
+           <RequiredInput 
              type="email"
              placeholder="Confirme seu e-mail"
              value={emailConf}
              onChange={(e) => [setEmailConf(e.target.value), setError("")]}
+             
            />
-           <Input 
+           <RequiredInput 
              type="password"
              placeholder="Digite a senha"
              value={senha}
              onChange={(e) => [setSenha(e.target.value), setError("")]}
+             
            />
-           <Input 
+           <RequiredInput 
              type="text"
              placeholder="Digite seu CNPJ"
              value={cnpj}
              onChange={(e) => [setCNPJ(e.target.value), setError("")]}
+             
            />
            <C.LabelError>{error}</C.LabelError>
            <Button Text="Inscrever-se" onClick={handleSignup} />
@@ -306,35 +315,40 @@ const Signup = () => {
              checked={perfil.colaborador}
            />
          </div>
-         <Input 
+         <RequiredInput 
            type="text"
            placeholder="Digite seu Nome"
            value={nome}
            onChange={(e) => [setNome(e.target.value), setError("")]}
+           
          />
-         <Input 
+         <RequiredInput 
            type="email"
            placeholder="Digite seu e-mail"
            value={email}
            onChange={(e) => [setEmail(e.target.value), setError("")]}
+           
          />
-         <Input 
+         <RequiredInput 
            type="email"
            placeholder="Confirme seu e-mail"
            value={emailConf}
            onChange={(e) => [setEmailConf(e.target.value), setError("")]}
+           
          />
-         <Input 
+         <RequiredInput 
            type="password"
            placeholder="Digite a senha"
            value={senha}
            onChange={(e) => [setSenha(e.target.value), setError("")]}
+           
          />
-         <Input 
+         <RequiredInput 
            type="text"
            placeholder="Digite o seu cargo"
            value={cargo}
            onChange={(e) => [setCargo(e.target.value), setError("")]}
+           
          />
          <C.LabelError>{error}</C.LabelError>
          <Button Text="Inscrever-se" onClick={handleSignup} />

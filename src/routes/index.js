@@ -8,6 +8,7 @@ import useAuth from "../hooks/useAuth";
 import MyProjects from "../pages/MyProjects";
 import About from "../pages/About";
 import ProjectDetails from "../pages/ProjectDetails";
+import ForgotPassword from "../pages/ForgotPassword";
 
 
 const Private = ({ Item }) => {
@@ -29,6 +30,8 @@ const RoutesApp = () => {
                     <Route path="/about" element={<About />}/>
                     <Route path="projectDetails/:id" element={<ProjectDetails />} />
                     <Route path="*" element={<Signin />} />
+                    <Route path="/linkedin" element={<ProjectDetails />} />
+                    <Route path="forgotPass" element={< ForgotPassword />} />
                 </Routes>
             </Fragment>
         </BrowserRouter>

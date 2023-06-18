@@ -3,12 +3,14 @@ import * as C from './style';
 
 const Input = ({ type, placeholder, value, onChange }) => {
   return(
-    <C.Input 
-      value={value}
-      onChange={onChange}
-      type={type}
-      placeholder={placeholder}
-    />
+    <C.InputWrapper>
+      <C.Input 
+        value={value}
+        onChange={onChange}
+        type={type}
+        placeholder={placeholder}
+      />
+    </C.InputWrapper>
   ) 
 };
 

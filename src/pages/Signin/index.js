@@ -62,6 +62,7 @@ const Signin = () => {
             <Link to="/signup">&nbsp;Registre-se</Link>
           </C.Strong>
         </C.LabelSignup>
+        <Link to="/forgotPass"><C.LabelForgotPass>Esqueci minha senha</C.LabelForgotPass></Link>
       </C.Content>
     </C.Container>
   )

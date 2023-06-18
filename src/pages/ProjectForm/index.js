@@ -8,6 +8,7 @@ import * as C from "./style";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import api from '../../Api/api';
+import RequiredInput from '../../components/RequiredInput';
 
 const ProjectForm = () => {
 
@@ -162,13 +163,13 @@ const ProjectForm = () => {
     <C.Container>
       <C.Label>Cadastre seu Projeto</C.Label>
       <C.Content>
-        <Input 
+        <RequiredInput 
           type="Text"
           placeholder="Nome do Projeto..."
           value={nomeProjeto}
           onChange={(e) => [setNomeProjeto(e.target.value), setError("")]}
         />
-        <Input 
+        <RequiredInput 
           type="Text"
           placeholder="Descrição..."
           value={descricao}

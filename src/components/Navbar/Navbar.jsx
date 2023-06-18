@@ -27,25 +27,41 @@ const Navbar = () => {
     <div class="navbar-brand" >
     <Link to="/home" className='logo'><i className='logo-icon'></i><span>Lin<span className='qp'>QP</span>roject</span></Link>
     </div>
-  <ul class="nav nav-underline">
-  <li class="nav-item">
-  <Link  class="nav-link" aria-current="page"  to="/home">Projetos</Link>
-  </li>
-  <li class="nav-item">
-  <Link  class="nav-link" to="/createProject">Cadastrar Projeto</Link>
-  </li>
-  <li class="nav-item">
-  <Link  class="nav-link" to="/myProjects">Meus Projetos</Link>
-  </li>
-  <li class="nav-item">
-  <Link class="nav-link" to="/about">Sobre o LinQProject</Link>
-  </li>
-</ul>
+    { userPerfil == "empresa" ? 
+      <ul class="nav nav-underline">
+        <li class="nav-item">
+          <Link  class="nav-link" aria-current="page"  to="/home">Projetos</Link>
+        </li>
+        <li class="nav-item">
+          <Link class="nav-link" to="/about">Sobre o LinQProject</Link>
+        </li> 
+      </ul> :
+
+      <ul class="nav nav-underline"> 
+        <li class="nav-item">
+        <Link  class="nav-link" aria-current="page"  to="/home">Projetos</Link>
+        </li>
+        <li class="nav-item">
+        <Link  class="nav-link" to="/createProject">Cadastrar Projeto</Link>
+        </li>
+        <li class="nav-item">
+        <Link  class="nav-link" to="/myProjects">Meus Projetos</Link>
+        </li>
+        <li class="nav-item">
+        <Link class="nav-link" to="/about">Sobre o LinQProject</Link>
+        </li>
+      </ul>
+    }
 <ul className='main'>
                 <li className={` ${userHasToken ? "hideOption" : ""} `}>
                   <div className='login'><Link to="/signin" className='user'>Fazer login</Link></div></li>
                   <li className={` ${userHasToken ? "hideOption" : ""} `}><div className='login'><Link to="/signup">Criar conta</Link></div></li>
-                <li className={` ${!userHasToken ? "hideOption" : ""} `} onClick={handleLogout}><Link><AiOutlineLogout /></Link></li>
+                <li className={` ${!userHasToken ? "hideOption" : "logoutIcon"} `} onClick={handleLogout}>
+                  <div className='iconContainer'>
+                    <span className='sair'>Sair</span>
+                    <Link><AiOutlineLogout /></Link>
+                  </div>
+                </li>
                 <div className='bx bx-menu' id='menu-icon'></div>
             </ul>
   

@@ -13,19 +13,19 @@ const Footer = () => {
             <div className='sb__footer-links'>
                 <div className='sb__footer-links_div'>
                     <h4>Deixe seu feedback!</h4>
-                    <a href="/employer">    
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScCioo7xKQ6VVHn262BhHJXdFYS53KNDmoxZY4zuxwJL5FftQ/viewform?usp=sf_link" target='_blank'>    
                         <p>Acessar formulário</p>
                     </a>
                 </div>
                 <div className='sb__footer-links_div'>
-                    <h4>Recursos</h4>
+                    <h4>Tutorial da plataforma</h4>
                     <a href="/resource">
                         <p>Documentação do LinQProject</p>
                     </a>
                 </div>
                 <div className='sb__footer-links_div'>
                     <h4>Parcerias</h4>
-                    <a href="/employer">
+                    <a href="https://facens.br/" target='_blank'>
                         <p>Facens</p>
                     </a>
                 </div>
@@ -41,7 +41,7 @@ const Footer = () => {
                 <div className='sb__footer-links_div'>
                     <h4>Redes Sociais da Mapper Tech</h4>
                     <div className='socialmedia'>
-                        <p><img src={fb} alt="" /></p>
+                        <Link to="https://www.facebook.com/Mapper-Tech-101289479682141/" target='_blank'><p><img src={fb} alt="" /></p></Link>
                         <Link to="https://twitter.com/mapper_tech" target='_blank'><p><img src={twitter} alt="" /></p></Link>
                         <Link to="https://www.linkedin.com/in/mapper-tech-47757b27b/" target='_blank'><p><img src={linkedin} alt="" /></p></Link>
                         <Link to="https://www.instagram.com/mapper.tech/" target='_blank'><p><img src={instagram} alt="" /></p></Link>

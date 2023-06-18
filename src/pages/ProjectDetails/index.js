@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from "react";
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import api from '../../Api/api';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
@@ -17,8 +17,13 @@ const ProjectDetails = () => {
 
     const [projeto, setProjeto] = useState({});
     const params = useParams();
+    const navigate = useNavigate();
     const userId = localStorage.getItem("user_id");
     const userPerfil = localStorage.getItem("user_perfil");
+    const userEmail = localStorage.getItem("user_email");
+    const shareUrl = 'http://localhost:3000/projectDetails/' + params.id; 
+    const shareTitle = 'Projeto ' + projeto.nome; 
+    const shareSummary = 'Confira o meu novo projeto cadastrado na plataforma LinQProject!';
 
     useEffect(() => {
         const userToken = localStorage.getItem("user_token");
@@ -37,6 +42,46 @@ const ProjectDetails = () => {
             
           })().catch(err => console.log(err));
     }, []);
+
+    const handleExcluirProjeto = async () => {
+
+        const userToken = localStorage.getItem("user_token");
+
+        const config = {
+            headers: {
+              'Authorization': 'Bearer ' + userToken
+            }
+        }
+
+        await api.delete('/projeto/deletar/' + projeto.id, config).then(() => {
+            alert("Projeto deletado com sucesso!");
+            navigate("/home");
+        })
+
+    }
+
+    const handleLikeProject = async () => {
+
+        const userToken = localStorage.getItem("user_token");
+
+        const config = {
+            headers: {
+              'Authorization': 'Bearer ' + userToken
+            }
+        }
+
+        const { data } = await api.get('/aluno/obter/' + projeto.alunoId, config)
+
+        const emailPayload = {
+            "toEmail": data.email,
+            "subject": "Nova curtida em seu projeto!",
+            "body": `Parabéns! A empresa ${userEmail.split("@")[0]} visitou o seu projeto ${projeto.nome} e se interessou por ele!`
+        }
+
+        await api.post('/email/send', emailPayload).then(() => {
+            alert("Notificação para o dono do projeto enviada com sucesso!");
+        })
+    }
 
   return (
     <>
@@ -102,9 +147,9 @@ const ProjectDetails = () => {
 
               <p style={{ fontSize: "30px" }}>{projeto.descricao}</p>
 
-              { parseInt(userId) === projeto.alunoId ? <button className='btnLinkedin'>Compartilhar projeto no LinkedIn</button> : "" }
-              { parseInt(userId) === projeto.alunoId ? <button className='btnExcluir'>Excluir projeto</button> : "" }
-              { userPerfil === 'empresa' ? <button className='btnFavoritarProjeto'>Favoritar Projeto</button> : "" }
+              { parseInt(userId) === projeto.alunoId ? <button className='btnLinkedin'>Compartilhar link do projeto</button> : "" }
+              { parseInt(userId) === projeto.alunoId ? <button className='btnExcluir' onClick={handleExcluirProjeto}>Excluir projeto</button> : "" }
+              { userPerfil === 'empresa' ? <button className='btnFavoritarProjeto' onClick={handleLikeProject}>Curtir projeto</button> : "" }
 
             </div>
 
