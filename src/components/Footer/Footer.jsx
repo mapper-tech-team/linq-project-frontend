@@ -30,12 +30,9 @@ const Footer = () => {
                     </a>
                 </div>
                 <div className='sb__footer-links_div'>
-                    <h4>MapperTech</h4>
-                    <a href="/about">
-                        <p>Sobre a equipe</p>
-                    </a>
-                    <a href="/contact">
-                        <p>Contatos</p>
+                    <h4>LinQProject</h4>
+                    <a href="https://www.figma.com/file/ZF9MwCrlcA1fMHQiM9FF0r/LinQ-Project?type=design&node-id=0-1" target='_blank'>
+                        <p>Protótipo do projeto</p>
                     </a>
                 </div>
                 <div className='sb__footer-links_div'>

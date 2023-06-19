@@ -10,7 +10,7 @@ const Card = ({ projetos }) => {
                 <div className='card-container' key={projeto.id}>
                     <div className='image-container'>
                         <img 
-                            src={projeto.foto !== "" ? projeto.foto : "https://s3-ap-south-1.amazonaws.com/static.awfis.com/wp-content/uploads/2017/07/07184649/ProjectManagement.jpg"} 
+                            src={projeto.foto !== "" && projeto.foto !== null ? projeto.foto : "https://s3-ap-south-1.amazonaws.com/static.awfis.com/wp-content/uploads/2017/07/07184649/ProjectManagement.jpg"} 
                             alt='Imagem do Projeto' />
                     </div>
                     <div className='card-content'>

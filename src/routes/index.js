@@ -29,7 +29,7 @@ const RoutesApp = () => {
                     <Route path="/myProjects" element={<MyProjects />}/>
                     <Route path="/about" element={<About />}/>
                     <Route path="projectDetails/:id" element={<ProjectDetails />} />
-                    <Route path="*" element={<Signin />} />
+                    <Route path="/" element={<Signin />} />
                     <Route path="/linkedin" element={<ProjectDetails />} />
                     <Route path="forgotPass" element={< ForgotPassword />} />
                 </Routes>

@@ -74,7 +74,6 @@ header {
 .main {
     display: flex;
     align-items: center;
-    
 }
 
 .main a {
@@ -119,14 +118,14 @@ border-radius: 20px;
 
 .logoutIcon {
     display: flex;
-    margin-left: 300%;
-    margin-right: 20%;
 }
 
 .iconContainer {
     display: flex;
     align-items: center; /* Align items vertically in the center */
-    width: 50%;
+    position: fixed;
+    right: 0;
+    top: 6%
 }
 
 .sair {

@@ -5,7 +5,7 @@ import Input from "../../components/Input";
 import Button from "../../components/Button";
 import RadioButton from '../../components/RadioButton';
 import * as C from "./style";
-import { Link, useNavigate } from "react-router-dom";
+import { Form, Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import api from '../../Api/api';
 import RequiredInput from '../../components/RequiredInput';
@@ -35,14 +35,14 @@ const ProjectForm = () => {
       })();
   }, []);
 
-  const buildPayload = () => {
+  const buildPayload = async () => {
     if (status.iniciado) {
       const projectPayload = {
         data: {
           nome: nomeProjeto,
           descricao: descricao,
-          foto: imagem,
-          documentacao: documentacao,
+          foto: await getFileUrl(imagem.name),
+          documentacao: documentacao.name,
           telefone: telefone,
           linkedin: linkedin,
           github: github,
@@ -56,8 +56,8 @@ const ProjectForm = () => {
         data: {
           nome: nomeProjeto,
           descricao: descricao,
-          foto: imagem,
-          documentacao: documentacao,
+          foto: await getFileUrl(imagem.name),
+          documentacao: documentacao.name,
           telefone: telefone,
           linkedin: linkedin,
           github: github,
@@ -71,8 +71,8 @@ const ProjectForm = () => {
         data: {
           nome: nomeProjeto,
           descricao: descricao,
-          foto: imagem,
-          documentacao: documentacao,
+          foto: await getFileUrl(imagem.name),
+          documentacao: documentacao.name,
           telefone: telefone,
           linkedin: linkedin,
           github: github,
@@ -84,16 +84,56 @@ const ProjectForm = () => {
     }
   }
 
-  const buildFilePayload = (file) => {
-    return {
-      'file': file
+  const getFileUrl = async (fileName) => {
+    const config = {
+      headers: {
+        'Authorization': 'Bearer ' + userToken
+      }
     }
+    const { data } = await api.get('/file/' + fileName, config)
+    return data.fileUrl;
   }
 
-  const handleCadastro = () => {
+  const handleDocumentoChange = (event) => {
+    setDocumentacao(event.target.files[0]);
+  }
+
+  const handleImagemChange = (event) => {
+    setImagem(event.target.files[0]);
+  }
+
+  const handleCadastro = async (event) => {
+    event.preventDefault();
+
     if (!nomeProjeto | !descricao ) {
       setError("Preencha todos os campos");
       return;
+    }
+
+    const formDataDoc = new FormData();
+    const formDataImg = new FormData();
+    const config = {
+      headers: {
+        'Authorization': 'Bearer ' + userToken
+      }
+    }
+
+    if (documentacao) {
+      formDataDoc.append('file', documentacao);
+      try {
+        await api.post('/file/upload', formDataDoc, config); 
+      } catch (err) {
+        console.log("Error on file upload: " + err);
+      }
+    }
+
+    if (imagem) {
+      formDataImg.append('file', imagem);
+      try {
+        await api.post('/file/upload', formDataImg, config);
+      } catch(err) {
+        console.log("Error on file upload: " + err);
+      }
     }
 
     (async () => {
@@ -103,14 +143,7 @@ const ProjectForm = () => {
           }
         }
 
-        const configFile = {
-          headers: {
-            'Authorization': 'Bearer ' + userToken,
-            'Content-Type': 'multipart/form-data'
-          }
-        }
-
-        const projectPayload = buildPayload();
+        const projectPayload = await buildPayload();
 
         console.log(projectPayload);
 
@@ -119,12 +152,6 @@ const ProjectForm = () => {
           alert("Projeto criado com sucesso!");
           navigate("/home");
         }
-
-        let formData = new FormData();
-        let fileImagePayload = buildFilePayload(projectPayload.data.foto);
-        formData.append('fileImagePayload', new Blob([JSON.stringify(fileImagePayload)], {
-          type: 'application/json'
-        }));
 
         // if (projectPayload.data.imagem) {
         //   const response = await api.post('/file/upload', projectPayload.data.foto, configFile);
@@ -197,22 +224,18 @@ const ProjectForm = () => {
         <div>
         <p style={{ textAlign: "center" }}>Selecionar Imagem:</p>
         <Input 
-        
           type="file"
           multiple
           accept="image/png"
-          value={imagem}
-          onChange={(e) => [setImagem(e.target.value), setError("")]}
+          onChange={handleImagemChange}
         />
         </div>
         <div>
         <p style={{ textAlign: "center" }}>Selecionar Documento:</p>
         <Input 
-        
           type="file"
           accept="application/pdf"
-          value={documentacao}
-          onChange={(e) => [setDocumentacao(e.target.value), setError("")]}
+          onChange={handleDocumentoChange}
         />
         </div>
         <div>

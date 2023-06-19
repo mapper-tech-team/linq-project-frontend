@@ -49,6 +49,7 @@
     background: #075e8d;
     color: white;
     border-radius: 10px;
+    margin-top: 5%;
 }
 
 .btnLinkedin:hover {
@@ -81,6 +82,23 @@
     background-color: rgb(21, 127, 42);
 }
 
+.btnBaixar {
+    padding: 10px;
+    margin-left: 5%;
+    background-color: #27C251;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.btnBaixar:hover {
+    background-color: #118831;
+}
+
+.buttonLink {
+    text-decoration: none;
+    color: white;
+}
 
 /* *{
     box-sizing:border-box;

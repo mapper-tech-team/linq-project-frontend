@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import api from '../../Api/api';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
@@ -12,6 +12,7 @@ import Projeto2 from '../../assets/projeto2.jpeg'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import 'bootstrap/dist/js/bootstrap';
+import { green } from '@mui/material/colors';
 
 const ProjectDetails = () => {
 
@@ -83,6 +84,10 @@ const ProjectDetails = () => {
         })
     }
 
+    const handleBaixarDocumento = async () => {
+        // await api.get('/download/' + projeto.documentacao)
+    }
+
   return (
     <>
         <Navbar />
@@ -146,6 +151,9 @@ const ProjectDetails = () => {
               </div>
 
               <p style={{ fontSize: "30px" }}>{projeto.descricao}</p>
+              { projeto.linkedin ? <p>LINKEDIN: <Link to={projeto.linkedin} target='_blank'>{projeto.linkedin}</Link></p> : "" }
+              { projeto.github ? <p>GITHUB: <Link to={projeto.github} target='_blank'>{projeto.github}</Link></p> : "" }
+              { projeto.documentacao ? <p>DOCUMENTO: {projeto.documentacao} <a className='buttonLink' href={`http://localhost:8080/file/download/${projeto.documentacao}`}><button className='btnBaixar'>Baixar Documento</button></a></p> : "" }
 
               { parseInt(userId) === projeto.alunoId ? <button className='btnLinkedin'>Compartilhar link do projeto</button> : "" }
               { parseInt(userId) === projeto.alunoId ? <button className='btnExcluir' onClick={handleExcluirProjeto}>Excluir projeto</button> : "" }

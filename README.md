@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# LinQProject
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descrição
 
-## Available Scripts
+O objetivo deste projeto é ser uma plataforma que possibilite a alunos terem um maior aproveitamento de seu período acadêmico, podendo submeter nela os projetos desenvolvidos ao longo dos cursos, adicionando imagens e documentos sobre os projetos. Nós temos também o objetivo de ser uma plataforma centralizadora, fazendo a conexão entre empresas e os projetos inovadores dos estudantes, de modo que surjam oportunidades de trabalho ou investimento caso as empresas se interessem pelos projetos.
 
-In the project directory, you can run:
+## Tecnologias utilizadas
 
-### `npm start`
+- React.js para o Frontend (Componentes Visuais)
+- Java e Spring Boot para o Backend (Regras de negócio)
+- Docker com MySQL para o banco de dados
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tela 1: Login
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Tela de Login](src/assets/login.png)
 
-### `npm test`
+Esta é a primeira tela do sistema. Nela é possível realizar o login, caso o usuário já tenha uma conta, ou então entrar na tela de cadastro para criar uma nova.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tela 2: Cadastro
 
-### `npm run build`
+![Tela de Cadastro](src/assets/cadastro.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Nesta tela, é possível realizar o cadastro como aluno, colaborador ou empresa. Caso seja empresa, não será possível cadastrar projetos, somente visualizá-los e entrar em contato com os donos dos projetos se algum projeto despertar o interesse.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Tela 3: Projetos
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Tela com os projetos](src/assets/projetos.png)
 
-### `npm run eject`
+Nesta tela é possível visualizar todos os projetos já cadastrados na plataforma, bem como entrar em cada um deles para ver os detalhes, como imagens e/ou documentos anexados.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Tela 4: Detalhes dos Projetos
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Detalhes dos Projetos](src/assets/detalhes.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Nesta tela, estão sendo apresentados os detalhes dos projetos (imagens, documentos, links paras redes sociais dos donos, etc).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Tela 5: Cadastro de Projetos
 
-## Learn More
+![Cadastro de Projetos](src/assets/cadProjeto.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Caso o usuário seja um aluno ou colaborador, ele terá acesso a esta tela, para que possa começar a construir o seu portfólio na plataforma.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Tela 6: Meus Projetos
 
-### Code Splitting
+![Meus Projetos](src/assets/meusProjetos.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Caso o usuário já tenha cadastrado algum projeto, ele poderá visualizá-los nesta tela.
 
-### Analyzing the Bundle Size
+## Tela 7: Sobre o LinQProject
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![Sobre](src/assets/sobre.png)
 
-### Making a Progressive Web App
+Nesta tela o usuário poderá conferir o conceito de missão, visão e valores para a equipe MapperTech, desenvolvedora do projeto.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Conclusão
 
-### Advanced Configuration
+Concluímos que, criando um portfólio em nossa plataforma, os estudantes de qualquer área podem gerar uma valiosa base de conhecimento que poderá ser aproveitada em oportunidades futuras com empresas que estejam dispostas em investir em ideias inovadoras, e os projetos casastrados na plataforma também podem servir como inspiração para alunos que estão começando um curso e desejam saber o que vão aprender ao longo do período acadêmico.   
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+__Contatos__  
+Email: mappertech@email.com  
+Linkedin: MapperTech  
+Instagram: mapper-tech  
+Facebook: Mapper Tech  
